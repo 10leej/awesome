@@ -457,7 +457,10 @@ for i = 1, 9 do
                       end
                   end,
                   {description = "toggle focused client on tag #" .. i, group = "tag"})
-    )
+
+	-- Screenshots
+	
+		  )
 end
 
 clientbuttons = gears.table.join(

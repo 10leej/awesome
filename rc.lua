@@ -62,8 +62,8 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.tile,
-    awful.layout.suit.floating,
     awful.layout.suit.tile.left,
+    awful.layout.suit.floating,
 --    awful.layout.suit.tile.bottom,
 --    awful.layout.suit.tile.top,
 --    awful.layout.suit.fair,
@@ -298,6 +298,42 @@ globalkeys = gears.table.join(
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
+
+   -- Volume Keys
+   awful.key({}, "XF86AudioLowerVolume", function ()
+     awful.util.spawn("amixer -q -D pulse sset Master 5%-", false)
+   end),
+   awful.key({}, "XF86AudioRaiseVolume", function ()
+     awful.util.spawn("amixer -q -D pulse sset Master 5%+", false)
+   end),
+   awful.key({}, "XF86AudioMute", function ()
+     awful.util.spawn("amixer -D pulse set Master 1+ toggle", false)
+   end),
+   -- Media Keys
+   awful.key({}, "XF86AudioPlay", function()
+     awful.util.spawn("playerctl play-pause", false)
+   end),
+   awful.key({}, "XF86AudioNext", function()
+     awful.util.spawn("playerctl next", false)
+   end),
+   awful.key({}, "XF86AudioPrev", function()
+     awful.util.spawn("playerctl previous", false)
+   end),
+
+    --Lock Screen
+    awful.key({ modkey, }, "l", function () awful.util.spawn("light-locker-command -l")                        end,
+              {description = "Lock Screen", group = "system"}),
+
+    --Firefox
+    awful.key({ modkey, }, "b", function () awful.util.spawn("firefox")                        end,
+              {description = "firefox", group = "applications"}),
+    --Chromium
+    awful.key({ modkey, "Shift" }, "b", function () awful.util.spawn("chromium")                        end,
+              {description = "chromium", group = "applications"}),
+    --Thunar
+    awful.key({ modkey, }, "f", function () awful.util.spawn("thunar")                        end,
+              {description = "thunar", group = "applications"}),
+
 
     awful.key({ modkey, "Control" }, "n",
               function ()
@@ -563,6 +599,7 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
 
 --Autostart
 awful.util.spawn("xrandr --output DisplayPort-0 --primary --mode 3440x1440 --pos 810x1080 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate inverted")

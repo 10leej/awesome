@@ -551,9 +551,12 @@ awful.rules.rules = {
     -- Set Telegram to always map on the tag named "2" on screen 2.
      { rule = { class = "Telegram-Desktop" },
        properties = { screen = 2, tag = "2" } },
- -- Set Discord to always map on the tag named "2" on screen 2.
-     { rule = { class = "Discord" },
+    -- Set Discord to always map on the tag named "2" on screen 2.
+     { rule = { class = "discord" },
        properties = { screen = 2, tag = "3" } },
+    -- Set Element (my matrix client) to always map on the tag named "2" on screen 2.
+     { rule = { class = "discord" },
+       properties = { screen = 2, tag = "4" } },
 
 
 }

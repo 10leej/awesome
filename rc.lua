@@ -323,7 +323,9 @@ globalkeys = gears.table.join(
     -- Lock Screen
     awful.key({ modkey, }, "l", function () awful.util.spawn("light-locker-command -l")                        end,
               {description = "Lock Screen", group = "system"}),
-
+    -- Shutdown PC
+     awful.key({ modkey, "Shift" }, "l", function () awful.util.spawn("poweroff")                        end,
+              {description = "Shutdown PC", group = "system"}),
     -- Firefox
     awful.key({ modkey, }, "b", function () awful.util.spawn("firefox")                        end,
               {description = "firefox", group = "applications"}),
@@ -555,7 +557,7 @@ awful.rules.rules = {
      { rule = { class = "discord" },
        properties = { screen = 2, tag = "3" } },
     -- Set Element (my matrix client) to always map on the tag named "2" on screen 2.
-     { rule = { class = "discord" },
+     { rule = { class = "Element" },
        properties = { screen = 2, tag = "4" } },
 
 
@@ -638,5 +640,6 @@ awful.util.spawn("hexchat")
 awful.util.spawn("mumble")
 awful.util.spawn("telegram-desktop")
 awful.util.spawn("discord")
+awful.util.spawn("element-desktop")
 
 -- }}}

@@ -48,13 +48,13 @@ end
 beautiful.init("/home/joshua/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
+-- If you do not like thes or do not have such a key,
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
@@ -320,19 +320,25 @@ globalkeys = gears.table.join(
      awful.util.spawn("playerctl previous", false)
    end),
 
-    --Lock Screen
+    -- Lock Screen
     awful.key({ modkey, }, "l", function () awful.util.spawn("light-locker-command -l")                        end,
               {description = "Lock Screen", group = "system"}),
 
-    --Firefox
+    -- Firefox
     awful.key({ modkey, }, "b", function () awful.util.spawn("firefox")                        end,
               {description = "firefox", group = "applications"}),
-    --Chromium
+    -- Chromium
     awful.key({ modkey, "Shift" }, "b", function () awful.util.spawn("chromium")                        end,
               {description = "chromium", group = "applications"}),
-    --Thunar
+    -- Thunar
     awful.key({ modkey, }, "f", function () awful.util.spawn("thunar")                        end,
               {description = "thunar", group = "applications"}),
+    -- Mate-Calc
+    awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
+              {description = "mate-calculator", group = "applications"}),
+
+
+
 
 
     awful.key({ modkey, "Control" }, "n",
@@ -511,7 +517,6 @@ awful.rules.rules = {
           "Kruler",
           "MessageWin",  -- kalarm.
           "Sxiv",
---nah          "Thunar", --tiling is great but I have a massive screen so this is nicer to have floating
           "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
           "Wpa_gui",
           "veromix",
@@ -531,12 +536,26 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = false }
+      }, properties = { titlebars_enabled = false } --bad titlebars! We don't need you here!
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Set Thunderbird to always map on the tag named "2" on screen 2.
+     { rule = { class = "Thunderbird" },
+       properties = { screen = 2, tag = "1" } },
+    --- Set Hexchat to always map on the tag named "2" on screen 2.
+     { rule = { class = "Hexchat" },
+       properties = { screen = 2, tag = "2" } },
+    -- Set Mumble to always map on the tag named "2" on screen 2.
+     { rule = { class = "Mumble" },
+       properties = { screen = 2, tag = "2" } },
+    -- Set Telegram to always map on the tag named "2" on screen 2.
+     { rule = { class = "Telegram-Desktop" },
+       properties = { screen = 2, tag = "2" } },
+ -- Set Discord to always map on the tag named "2" on screen 2.
+     { rule = { class = "Discord" },
+       properties = { screen = 2, tag = "3" } },
+
+
 }
 -- }}}
 
@@ -611,4 +630,10 @@ awful.util.spawn("nm-applet")
 awful.util.spawn("pnmixer")
 awful.util.spawn("thunar --daemon")
 awful.util.spawn("light-locker")
+awful.util.spawn("thunderbird")
+awful.util.spawn("hexchat")
+awful.util.spawn("mumble")
+awful.util.spawn("telegram-desktop")
+awful.util.spawn("discord")
+
 -- }}}

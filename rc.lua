@@ -61,22 +61,22 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
+--    awful.layout.suit.tile,
+--    awful.layout.suit.tile.left,
+    awful.layout.suit.spiral,
     awful.layout.suit.floating,
 --    awful.layout.suit.tile.bottom,
 --    awful.layout.suit.tile.top,
 --    awful.layout.suit.fair,
 --    awful.layout.suit.fair.horizontal,
---    awful.layout.suit.spiral,
 --    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+--    awful.layout.suit.max,
 --    awful.layout.suit.max.fullscreen,
 --    awful.layout.suit.magnifier,
 --    awful.layout.suit.corner.nw,
-    -- awful.layout.suit.corner.ne,
-    -- awful.layout.suit.corner.sw,
-    -- awful.layout.suit.corner.se,
+--    awful.layout.suit.corner.ne,
+--    awful.layout.suit.corner.sw,
+--    awful.layout.suit.corner.se,
 }
 -- }}}
 
@@ -631,8 +631,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --Autostart
 awful.util.spawn("xrandr --output DisplayPort-0 --primary --mode 3440x1440 --pos 810x1080 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate inverted")
 awful.util.spawn("picom")
-awful.util.spawn("nm-applet")
-awful.util.spawn("pnmixer")
 awful.util.spawn("thunar --daemon")
 awful.util.spawn("light-locker")
 awful.util.spawn("thunderbird")

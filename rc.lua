@@ -321,10 +321,10 @@ globalkeys = gears.table.join(
    end),
 
     -- Lock Screen
-    awful.key({ modkey, }, "l", function () awful.util.spawn("light-locker-command -l")                        end,
+    awful.key({ modkey, }, "Escape", function () awful.util.spawn("light-locker-command -l")                        end,
               {description = "Lock Screen", group = "system"}),
     -- Shutdown PC
-     awful.key({ modkey, "Shift" }, "l", function () awful.util.spawn("poweroff")                        end,
+     awful.key({ modkey, "Shift" }, "Escape", function () awful.util.spawn("poweroff")                        end,
               {description = "Shutdown PC", group = "system"}),
     -- Firefox
     awful.key({ modkey, }, "b", function () awful.util.spawn("firefox")                        end,

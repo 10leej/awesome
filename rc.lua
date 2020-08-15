@@ -631,13 +631,12 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --Autostart
 awful.util.spawn("xrandr --output DisplayPort-0 --primary --mode 3440x1440 --pos 688x1080 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate inverted")
 awful.util.spawn("picom")
-awful.util.spawn("thunar --daemon")
 awful.util.spawn("light-locker")
 awful.util.spawn("thunderbird")
 awful.util.spawn("hexchat")
 awful.util.spawn("mumble")
 awful.util.spawn("telegram-desktop")
-awful.util.spawn("discord")
+awful.util.spawn("flatpak run com.discordapp.Discord")
 awful.util.spawn("element-desktop")
 
 -- }}}

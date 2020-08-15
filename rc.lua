@@ -332,9 +332,9 @@ globalkeys = gears.table.join(
     -- Chromium
     awful.key({ modkey, "Shift" }, "b", function () awful.util.spawn("chromium")                        end,
               {description = "chromium", group = "applications"}),
-    -- Thunar
-    awful.key({ modkey, }, "f", function () awful.util.spawn("thunar")                        end,
-              {description = "thunar", group = "applications"}),
+    -- PCmanFM
+    awful.key({ modkey, }, "f", function () awful.util.spawn("pcmanfm")                        end,
+              {description = "pcmanfm", group = "applications"}),
     -- Mate-Calc
     awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
               {description = "mate-calculator", group = "applications"}),

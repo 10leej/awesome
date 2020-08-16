@@ -61,9 +61,9 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
---    awful.layout.suit.tile,
---    awful.layout.suit.tile.left,
     awful.layout.suit.spiral,
+    awful.layout.suit.tile,
+--    awful.layout.suit.tile.left,
     awful.layout.suit.floating,
 --    awful.layout.suit.tile.bottom,
 --    awful.layout.suit.tile.top,
@@ -330,7 +330,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "b", function () awful.util.spawn("firefox")                        end,
               {description = "firefox", group = "applications"}),
     -- Chromium
-    awful.key({ modkey, "Shift" }, "b", function () awful.util.spawn("chromium")                        end,
+    awful.key({ modkey, "Shift" }, "b", function () awful.util.spawn("chromium-browser")                        end,
               {description = "chromium", group = "applications"}),
     -- PCmanFM
     awful.key({ modkey, }, "f", function () awful.util.spawn("pcmanfm")                        end,
@@ -623,6 +623,7 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
+
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)

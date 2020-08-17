@@ -300,24 +300,15 @@ globalkeys = gears.table.join(
               {description = "select previous", group = "layout"}),
 
    -- Volume Keys
-   awful.key({}, "XF86AudioLowerVolume", function ()
-     awful.util.spawn("amixer -q -D pulse sset Master 5%-", false)
-   end),
-   awful.key({}, "XF86AudioRaiseVolume", function ()
-     awful.util.spawn("amixer -q -D pulse sset Master 5%+", false)
-   end),
-   awful.key({}, "XF86AudioMute", function ()
-     awful.util.spawn("amixer -D pulse set Master 1+ toggle", false)
-   end),
    -- Media Keys
    awful.key({}, "XF86AudioPlay", function()
-     awful.util.spawn("playerctl play-pause", false)
+     awful.util.spawn("rhythmbox-client --play-pause", false)
    end),
    awful.key({}, "XF86AudioNext", function()
-     awful.util.spawn("playerctl next", false)
+     awful.util.spawn("rhythmbox-client --next", false)
    end),
    awful.key({}, "XF86AudioPrev", function()
-     awful.util.spawn("playerctl previous", false)
+     awful.util.spawn("rhythmbox-client --previous", false)
    end),
 
     -- Lock Screen

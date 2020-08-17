@@ -634,7 +634,7 @@ awful.util.spawn("xrandr --output DisplayPort-0 --primary --mode 3440x1440 --pos
 awful.util.spawn("picom")
 awful.util.spawn("light-locker")
 awful.util.spawn("thunderbird")
-awful.util.spawn("hexchat")
+-- awful.util.spawn("hexchat") --[[This line get's me banned from freenode]]
 awful.util.spawn("mumble")
 awful.util.spawn("telegram-desktop")
 awful.util.spawn("flatpak run com.discordapp.Discord")

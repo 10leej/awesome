@@ -330,16 +330,16 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
               {description = "mate-calculator", group = "applications"}),
 
---[[
-    -- Mate-Calc
+--[[ under construction
+    -- Screenshots full desktop
     awful.key({ "Print", }, nil, function () awful.util.spawn("maim ~/Pictures/Screenshots/$(date +%s).png")                        end,
-              {description = "mate-calculator", group = "applications"}),
-    -- Mate-Calc
-    awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
-              {description = "mate-calculator", group = "applications"}),
-    -- Mate-Calc
-    awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
-              {description = "mate-calculator", group = "applications"}),
+              {description = "screenshot", group = "applications"}),
+    -- Screenshot window
+    awful.key({ modkey, }, "c", function () awful.util.spawn("maim -i $(xdotool getactivewindow) ~/mypicture.jpg")                        end,
+              {description = "screenshot-window", group = "applications"}),
+    -- screenshot select
+    awful.key({ modkey, }, "c", function () awful.util.spawn("maim -s | xclip -selection clipboard -t image/png")                        end,
+              {description = "screenshot-selection", group = "applications"}),
 ]]
 
 

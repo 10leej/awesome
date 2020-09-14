@@ -48,7 +48,7 @@ end
 beautiful.init("/home/joshua/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -347,7 +347,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
+    awful.key({ modkey },            "p",     function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -361,7 +361,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
+    awful.key({ modkey }, "r", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
 )
 
@@ -628,7 +628,7 @@ awful.util.spawn("thunderbird")
 -- awful.util.spawn("hexchat") --[[This line get's me banned from freenode]]
 awful.util.spawn("mumble")
 awful.util.spawn("telegram-desktop")
-awful.util.spawn("flatpak run com.discordapp.Discord")
+awful.util.spawn("Discord")
 awful.util.spawn("element-desktop")
 awful.util.spawn("thunar -d")
 

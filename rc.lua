@@ -330,6 +330,20 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
               {description = "mate-calculator", group = "applications"}),
 
+--[[
+    -- Mate-Calc
+    awful.key({ "Print", }, nil, function () awful.util.spawn("maim ~/Pictures/Screenshots/$(date +%s).png")                        end,
+              {description = "mate-calculator", group = "applications"}),
+    -- Mate-Calc
+    awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
+              {description = "mate-calculator", group = "applications"}),
+    -- Mate-Calc
+    awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
+              {description = "mate-calculator", group = "applications"}),
+]]
+
+
+
 
 
 

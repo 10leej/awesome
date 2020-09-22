@@ -10,7 +10,7 @@ File manager = Thunar (super+f)
 
 installed applications:  
 > alacritty  
-Chromium  
+chromium  
 discord  
 element  
 firefox  

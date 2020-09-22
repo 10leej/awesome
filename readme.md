@@ -6,14 +6,20 @@ current I use the default keybindings provided by the awesomewm dev team
 # Installed Applications
 Terminal = Alacritty (super+enter)  
 Browser = Firefox (super+b)  
-File manager = PCmanFM (super+f)
+File manager = Thunar (super+f)
 
-# Autostarts
-picom  
-xrandr (script for my 2 monitor setup)  
-light-locker  
-thunderbird  
+installed applications:  
+> alacritty  
+Chromium  
 discord  
+element  
+firefox  
 hexchat  
-telegram-desktop  
+mate-calc  
 mumble  
+picom  
+telegram-desktop *--likely to be depreciated*  
+thunderbird  
+thunar  
+vim  
+vscodium  

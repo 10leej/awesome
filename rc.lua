@@ -546,7 +546,7 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false } --bad titlebars! We don't need you here!
     },
 
-    -- Set Thunderbird to always map on the tag named "2" on screen 2.
+    -- Set Thunderbird to always map on the tag named "1" on screen 2.
      { rule = { class = "Thunderbird" },
        properties = { screen = 2, tag = "1" } },
     --- Set Hexchat to always map on the tag named "2" on screen 2.
@@ -558,10 +558,10 @@ awful.rules.rules = {
     -- Set Telegram to always map on the tag named "2" on screen 2.
      { rule = { class = "Telegram-Desktop" },
        properties = { screen = 2, tag = "2" } },
-    -- Set Discord to always map on the tag named "2" on screen 2.
+    -- Set Discord to always map on the tag named "3" on screen 2.
      { rule = { class = "discord" },
        properties = { screen = 2, tag = "3" } },
-    -- Set Element (my matrix client) to always map on the tag named "2" on screen 2.
+    -- Set Element (my matrix client) to always map on the tag named "4" on screen 2.
      { rule = { class = "Element" },
        properties = { screen = 2, tag = "4" } },
 
@@ -635,15 +635,14 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 --Autostart
-awful.util.spawn("xrandr --output DisplayPort-0 --primary --mode 3440x1440 --pos 688x1080 --rotate normal --output DisplayPort-1 --mode 1920x1080 --pos 0x0 --rotate inverted --output DisplayPort-2 --off --output HDMI-A-0 --off")
 awful.util.spawn("picom")
-awful.util.spawn("light-locker")
+--awful.util.spawn("light-locker")
 awful.util.spawn("thunderbird")
--- awful.util.spawn("hexchat") --[[This line get's me banned from freenode]]
+--awful.util.spawn("hexchat") --[[This line get's me banned from freenode]]
 awful.util.spawn("mumble")
 awful.util.spawn("telegram-desktop")
 awful.util.spawn("Discord")
-awful.util.spawn("element-desktop")
+awful.util.spawn("flatpak run im.riot.Riot")
 awful.util.spawn("thunar -d")
-
+awful.util.spawn("discord")
 -- }}}

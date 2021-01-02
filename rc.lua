@@ -329,6 +329,9 @@ globalkeys = gears.table.join(
     -- Mate-Calc
     awful.key({ modkey, }, "c", function () awful.util.spawn("mate-calc")                        end,
               {description = "mate-calculator", group = "applications"}),
+    -- vsCodium
+    awful.key({ modkey, }, "e", function () awful.util.spawn("codium")                        end,
+              {description = "vsCodium", group = "applications"}),
 
 --[[ under construction
     -- Screenshots full desktop
@@ -636,7 +639,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 --test
 --Autostart
 awful.util.spawn("picom")
---awful.util.spawn("light-locker")
+awful.util.spawn("light-locker")
 awful.util.spawn("thunderbird")
 --awful.util.spawn("hexchat") --[[This line get's me banned from freenode]]
 awful.util.spawn("mumble")

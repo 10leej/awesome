@@ -643,7 +643,6 @@ awful.util.spawn("light-locker")
 awful.util.spawn("thunderbird")
 --awful.util.spawn("hexchat") --[[This line get's me banned from freenode]]
 awful.util.spawn("mumble")
-awful.util.spawn("telegram-desktop")
 awful.util.spawn("Discord")
 awful.util.spawn("flatpak run im.riot.Riot")
 awful.util.spawn("thunar -d")

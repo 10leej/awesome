@@ -519,6 +519,9 @@ awful.rules.rules = {
           "DTA",  -- Firefox addon DownThemAll.
           "copyq",  -- Includes session name in class.
           "pinentry",
+          "thunar",
+          "pavucontrol",
+          "xterm",
         },
         class = {
           "Arandr",
@@ -554,19 +557,19 @@ awful.rules.rules = {
        properties = { screen = 2, tag = "1" } },
     --- Set Hexchat to always map on the tag named "2" on screen 2.
      { rule = { class = "Hexchat" },
-       properties = { screen = 2, tag = "2" } },
+       properties = { screen = 2, tag = "4" } },
     -- Set Mumble to always map on the tag named "2" on screen 2.
      { rule = { class = "Mumble" },
-       properties = { screen = 2, tag = "2" } },
+       properties = { screen = 2, tag = "4" } },
     -- Set Telegram to always map on the tag named "2" on screen 2.
      { rule = { class = "Telegram-Desktop" },
        properties = { screen = 2, tag = "2" } },
     -- Set Discord to always map on the tag named "3" on screen 2.
      { rule = { class = "discord" },
-       properties = { screen = 2, tag = "3" } },
+       properties = { screen = 2, tag = "2" } },
     -- Set Element (my matrix client) to always map on the tag named "4" on screen 2.
      { rule = { class = "Element" },
-       properties = { screen = 2, tag = "4" } },
+       properties = { screen = 2, tag = "3" } },   
 
 
 }
@@ -647,4 +650,5 @@ awful.util.spawn("Discord")
 awful.util.spawn("flatpak run im.riot.Riot")
 awful.util.spawn("thunar -d")
 awful.util.spawn("discord")
+awful.spawn.once("xrandr --output DisplayPort-0 --primary --mode 3440x1440 --pos 988x1080 --rotate normal --output DisplayPort-1 --mode 1920x1080 --pos 0x0 --rotate inverted --output DisplayPort-2 --off --output HDMI-A-0 --off")
 -- }}}
